@@ -1,7 +1,7 @@
 {
   "name": "min-pad",
   "version": "1.0.0",
-  "description": "Notepad-like markdown editor",
+  "description": "Markdown Into Notepad",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
