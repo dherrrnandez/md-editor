@@ -2,10 +2,13 @@
   "name": "min-pad",
   "version": "1.0.0",
   "description": "Markdown Into Notepad",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Daniel Hernandez @dherrrnandez",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^22.0.0"
+  }
 }
