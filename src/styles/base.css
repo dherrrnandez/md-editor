@@ -1,0 +1,18 @@
+:root {
+    font: menu;
+}
+
+.wrapper {
+    display: grid;
+    padding: 1rem;
+}
+
+.line {
+    font-size: 1.25rem;
+    background-color: antiquewhite;
+    border: 1px solid salmon;
+}
+
+.line:focus {
+    outline: none;
+}
