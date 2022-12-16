@@ -3,33 +3,36 @@ let line = document.querySelectorAll(".line")
 
 editor.addEventListener("keydown", e => {
     if (e.target.className = "line") {
-        let content = e.target.value
+        let content = e.target.innerHTML
         let prevLine = e.target.previousElementSibling
         let nextLine = e.target.nextElementSibling
 
+        console.log(content)
+
+        e.target.addEventListener("selectstart", e => {
+            console.log("Selection")
+        })
         // const lines = content.split(/\r?\n/)
 
         if (e.key === "Tab") {
+
             e.target.previousElementSibling.focus()
-            e.target.value = "    " + content
+            // e.target.value = "    " + content
         }
 
         if (e.key === "Enter") {
-            if (nextLine == null) {
-                const newLine = document.createElement("input")
+            const newLine = document.createElement("p")
+            newLine.className = "line"
+            newLine.setAttribute("contenteditable", "")
 
-                newLine.className = "line"
-                editor.appendChild(newLine)
-                e.target.nextElementSibling.focus()
-            } else {
-                e.target.nextElementSibling.focus()
-            }
+            editor.insertBefore(newLine, nextLine)
+            e.target.nextElementSibling.focus()
         }
 
         if (e.key === "Backspace") {
-            if (content == "") {
-                if (prevLine !== null) {
-                    prevLine.focus()
+            if (content == "<br>") {
+                if (e.target.previousElementSibling !== null) {
+                    e.target.previousElementSibling.focus()
                     e.target.remove()
                 }
             }
