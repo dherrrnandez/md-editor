@@ -3,14 +3,15 @@ const editor = document.querySelector(".wrapper")
 // Text editor behaviour to the app 📑
 
 editor.addEventListener("keydown", e => {
-    if (e.target.className = "text") {
+    if (e.target.classList.contains("text")) {
         let content = e.target.value
         let prevLine = e.target.previousElementSibling
         let nextLine = e.target.nextElementSibling
 
         if (e.key === "Tab") {
             e.target.previousElementSibling.focus()
-            e.target.value = "    " + content
+            // 👇 adds tabulation (not working well)
+            // e.target.value = "    " + content
         }
 
         if (e.key === "Enter") {
